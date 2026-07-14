@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6.2.0
 
       - name: Pull Docker Images and Package
         run: |
@@ -52,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Docker images as release assets
-        uses: softprops/action-gh-release@v2.328.0
+        uses: softprops/action-gh-release@v3.0.2
         with:
           tag_name: DockerTarBuilder-ARM64
           files: ${{ github.workspace }}/*.tar.gz
